@@ -5,8 +5,10 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:SFRM.Keyboard.Demo"
         mc:Ignorable="d"
-        Title="MainWindow" Height="350" Width="525">
+        Title="Keyboard Demo" Height="350" Width="525" Closed="Window_Closed">
     <Grid>
-        
+        <Label x:Name="LabelKeys" HorizontalAlignment="Left" Margin="0" VerticalAlignment="Top" FontFamily="Segoe UI Emoji" FontSize="20" Background="#FFF2F780">
+            <TextBlock x:Name="TextKeys" TextWrapping="Wrap" Text="Teclas presionadas ..."/>
+        </Label>
     </Grid>
 </Window>
