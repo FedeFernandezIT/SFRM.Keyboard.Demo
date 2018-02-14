@@ -33,13 +33,9 @@ namespace SFRM.Keyboard.Demo
             InitializeComponent();
             hook = new LowLevelKeyboardProc(MyCallbackFunction);
             
-            // setup a keyboard hook            
-            using (Process process = Process.GetCurrentProcess())
-            using (ProcessModule module = process.MainModule)
-            {
-                IntPtr hModule = GetModuleHandle(module.ModuleName);
-                hHook = SetWindowsHookEx(WH_KEYBOARD_LL, hook, hModule, 0);
-            }            
+            // setup a keyboard hook                                    
+            IntPtr hModule = GetModuleHandle(null);
+            hHook = SetWindowsHookEx(WH_KEYBOARD_LL, hook, hModule, 0);            
         }
     
         private IntPtr MyCallbackFunction(int code, IntPtr wParam, IntPtr lParam)
